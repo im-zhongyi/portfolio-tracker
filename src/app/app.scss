@@ -1,0 +1,9 @@
+@use '../styles/variable' as *;
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.primary-typography{
+    color:$primary;
+}

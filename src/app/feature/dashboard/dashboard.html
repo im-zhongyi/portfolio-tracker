@@ -1,0 +1,13 @@
+<div class="row">
+    <section>
+        <div class="example-button-row">
+            <button matButton="filled" color="primary">{{'dashboard_addAsset'|translate}}</button>
+        </div>
+    </section>
+
+</div>
+    <div class="row" style="width: 500px; height: 300px;">
+        <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [type]="chartType"
+            [legend]="chartLegend">
+        </canvas>
+    </div>
