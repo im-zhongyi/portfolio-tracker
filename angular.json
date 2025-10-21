@@ -79,7 +79,7 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:jest",
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -100,6 +100,32 @@
             "polyfills": [
               "@angular/localize/init"
             ]
+          }
+        }
+      }
+    },
+    "common-ui": {
+      "projectType": "library",
+      "root": "projects/common-ui",
+      "sourceRoot": "projects/common-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/common-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/common-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:jest",
+          "options": {
+            "tsConfig": "projects/common-ui/tsconfig.spec.json"
           }
         }
       }

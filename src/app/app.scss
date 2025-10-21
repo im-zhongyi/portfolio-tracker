@@ -7,3 +7,8 @@
 .primary-typography{
     color:$primary;
 }
+.app-container{
+    width: 1000px; // Specify your desired width
+  margin: 0 auto; // This centers the div horizontally
+  padding: 20px; // For visual demonstration
+}

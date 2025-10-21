@@ -7,12 +7,9 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { provideTranslations } from './util/provide-translations';
 import { provideHttpClient } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { TranslationLoaderService } from './util/translate.loader';
 
 
-export function initTranslations(loader: TranslationLoaderService) {
-  return () => loader.loadAll('en');
-}
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,12 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideTranslations(),
     provideAnimations(),
     provideHttpClient(),
-    importProvidersFrom(MatButtonModule),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initTranslations,
-      deps: [TranslationLoaderService],
-      multi: true
-    }
+    importProvidersFrom(MatButtonModule)
   ]
 };

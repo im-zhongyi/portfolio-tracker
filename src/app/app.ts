@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -7,14 +7,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, TranslateModule],
+  imports: [RouterOutlet, MatToolbarModule, MatButtonModule, MatIconModule, TranslateModule, ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-    constructor(private translate: TranslateService) {
-      // translate.setDefaultLang('en');
-      translate.use('header');
+
+  private translate = inject(TranslateService);
+  private router = inject(Router);
+    constructor() {
+      this.translate.use('common');
+    }
+
+    navigateToHome(){
+      this.router.navigateByUrl('/');
     }
   
 }

@@ -38,8 +38,11 @@ html {
 }/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f0f6ff; }
 
+.app-container{
+  padding:20px
+}
 .section-gap{
   padding-bottom: 15px;
 }
@@ -53,4 +56,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   ));
   
+}
+
+button {
+    margin-right: 10px; /* Adds space to the right of each button */
+}
+button:last-child {
+    margin-right: 0; /* Removes margin from the last button */
 }

@@ -1,12 +1,11 @@
-  <mat-toolbar>
-      <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
-         <mat-icon class="primary-typography">menu</mat-icon>
-      </button>
-      <span>{{'appHeader_title'|translate}}</span>
-
-   </mat-toolbar>
-<div class="section-gap"></div>
-<div class="w-100 row">
-   <router-outlet/>
+<mat-toolbar>
+   <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon class="primary-typography">menu</mat-icon>
+   </button>
+   <button (click)="navigateToHome()">{{'common_appHeader_title'|translate}}</button>
+</mat-toolbar>
+<div class="app-container">
+   <div class="w-100 row">
+      <router-outlet />
+   </div>
 </div>
-
