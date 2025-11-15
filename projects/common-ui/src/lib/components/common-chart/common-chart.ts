@@ -18,6 +18,7 @@ export class CommonChart {
 
   options: ChartOptions = {
     responsive: true,
+    maintainAspectRatio:false,
     plugins: {
       tooltip: {
         enabled: this.chartTooltip

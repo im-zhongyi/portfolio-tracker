@@ -13,7 +13,6 @@ import { CommonChart} from 'common-ui';
 })
 export class Demo {
   constructor(private translate: TranslateService) {
-    // translate.setDefaultLang('en');
     translate.use('dashboard');
   }
 
@@ -26,10 +25,12 @@ export class Demo {
   chartType1: ChartType = 'doughnut'; // or 'bar', 'doughnut', etc.
   chartType2: ChartType = 'pie';
   chartType3: ChartType = 'bar'; 
+  chartType4: ChartType = 'line';
   chartLegend = true;
 
   chartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio:false,  
     plugins: {
       tooltip: {
         enabled: true
@@ -45,4 +46,5 @@ export class Demo {
     })
     this.chartLabels.push('May');
   }
+  
 }

@@ -1,27 +1,45 @@
 <div class="container">
-<div class="row">
-    <div class="col col-sm-12" >
-        <button matButton="elevated" color="primary">{{'dashboard_addAsset'|translate}}</button>
-        <button matButton="elevated">add item</button>
+    <div class="row">
+        <div class="col col-sm-12">
+            <button matButton="elevated" color="primary">{{'dashboard_addAsset'|translate}}</button>
+            <button matButton="elevated">add item</button>
+        </div>
     </div>
-</div>
-<div class="section-gap"></div>
-<div clas class="row" >
-    <div class="col col-sm-4">
-        <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType1"
-            [legend]="chartLegend">
-        </lib-common-chart>
-    </div>
+   
+    <div clas class="row">
+        <div class="col col-sm-6">
+            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType1" [legend]="chartLegend">
+            </lib-common-chart>
+        </div>
 
-    <div class="col col-sm-4">
-        <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType2"
-            [legend]="chartLegend">
-        </lib-common-chart>
+        <div class="col col-sm-6">
+            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType2" [legend]="chartLegend">
+            </lib-common-chart>
+        </div>
+
     </div>
-    <div class="col col-sm-4">
-        <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType3"
-            [legend]="chartLegend">
-        </lib-common-chart>
+     <div class="section-gap"></div>
+    <div clas class="row">
+        <div class="col col-sm-6">
+            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType3" [legend]="chartLegend">
+            </lib-common-chart>
+        </div>
+        <div class="col col-sm-6">
+            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType4" [legend]="chartLegend">
+            </lib-common-chart>
+        </div>
+
     </div>
-</div>
+            <div class="section-gap"></div>
+            <div clas class="row">
+                    <div class="col col-sm-6">
+                            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType3" [legend]="chartLegend">
+                            </lib-common-chart>
+                    </div>
+                    <div class="col col-sm-6">
+                            <lib-common-chart [datasets]="chartData" [labels]="chartLabels" [type]="chartType4" [legend]="chartLegend">
+                            </lib-common-chart>
+                    </div>
+
+            </div>
 </div>
