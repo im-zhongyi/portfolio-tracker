@@ -1,0 +1,27 @@
+name: Run Jest Tests
+
+on:
+  push:              # Runs on every push
+    branches:
+      - "**"         # or specify branches like ['main', 'develop']
+  pull_request:      # Also run tests on PRs (recommended)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18          # Match your project version
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci                 # Faster & reproducible
+
+      - name: Run Jest tests
+        run: npm test -- --ci --runInBand
