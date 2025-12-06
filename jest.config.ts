@@ -35,6 +35,7 @@ const config: Config = {
     ]
   },
 
+  // Allow transforming specific ESM packages which ship modern syntax (include @angular)
   transformIgnorePatterns: [
     'node_modules/(?!.*\\.mjs$)',
   ],
@@ -48,6 +49,7 @@ const config: Config = {
     '\\.(css|scss|sass)$': 'identity-obj-proxy',          // stub styles
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js', // stub assets
     '^common-ui$': '<rootDir>/projects/common-ui/src/public-api.ts',
+    '^lodash-es$': 'lodash',
   },
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'], // no setup file needed in jest-preset-angular v15
   testPathIgnorePatterns: ['<rootDir>/dist/'],

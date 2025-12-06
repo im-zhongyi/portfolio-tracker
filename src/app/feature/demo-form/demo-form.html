@@ -1,0 +1,63 @@
+<div class="demo-form-container">
+	<h3>Demo Form (Material)</h3>
+	<form [formGroup]="demoForm" (ngSubmit)="onSubmit()" class="demo-form">
+		<mat-form-field appearance="outline" style="width:100%; margin-bottom:12px;">
+			<mat-label>Full Name</mat-label>
+			<input matInput formControlName="fullName" placeholder="John Doe">
+			<mat-error *ngIf="demoForm.get('fullName')?.hasError('required')">Full name is required</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" style="width:100%; margin-bottom:12px;">
+			<mat-label>Email</mat-label>
+			<input matInput formControlName="email" placeholder="name@example.com">
+			<mat-error *ngIf="demoForm.get('email')?.hasError('email')">Enter a valid email</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" style="width:100%; margin-bottom:12px;">
+			<mat-label>Description</mat-label>
+			<textarea matInput formControlName="description" rows="3"></textarea>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" style="width:100%; margin-bottom:12px;">
+			<mat-label>Asset Type</mat-label>
+			<mat-select formControlName="assetType">
+				<mat-option value="stock">Stock</mat-option>
+				<mat-option value="bond">Bond</mat-option>
+				<mat-option value="crypto">Crypto</mat-option>
+				<mat-option value="cash">Cash</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<label style="display:block; margin:8px 0 4px">Risk Level</label>
+		<mat-radio-group formControlName="riskLevel" style="display:flex; gap:12px; margin-bottom:12px;">
+			<mat-radio-button value="low">Low</mat-radio-button>
+			<mat-radio-button value="medium">Medium</mat-radio-button>
+			<mat-radio-button value="high">High</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-checkbox formControlName="agreeTerms" style="display:block; margin-bottom:12px;">I agree to terms</mat-checkbox>
+
+		<div style="display:flex; gap:12px; align-items:center; margin-bottom:12px;">
+			<mat-form-field appearance="outline">
+				<mat-label>Purchase Date</mat-label>
+				<input matInput [matDatepicker]="picker" formControlName="purchaseDate">
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" style="width:160px;">
+				<mat-label>Country</mat-label>
+				<mat-select formControlName="country">
+					<mat-option value="us">United States</mat-option>
+					<mat-option value="hk">Hong Kong</mat-option>
+					<mat-option value="sg">Singapore</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<div style="margin-top:16px; display:flex; gap:12px;">
+			<button mat-button color="primary" type="submit">Submit</button>
+			<button mat-button type="button" (click)="resetForm()">Reset</button>
+		</div>
+	</form>
+</div>

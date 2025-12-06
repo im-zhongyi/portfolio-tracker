@@ -26,6 +26,11 @@ export class Demo {
   chartType2: ChartType = 'pie';
   chartType3: ChartType = 'bar'; 
   chartType4: ChartType = 'line';
+  chartType5: ChartType = 'radar'; 
+  chartType6: ChartType = 'polarArea';
+  chartType7: ChartType = 'bubble';
+  chartType8: ChartType = 'scatter';
+
   chartLegend = true;
 
   chartOptions: ChartOptions = {
